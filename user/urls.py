@@ -20,5 +20,8 @@ from . import views
 from django.conf.urls.static import static
 
 urlpatterns = [
-         path('',views.index,name='index'),
+        path('',views.index,name='index'),
+        path('verify/',views.verify_view,name='verify-view'),
+        path('',views.home_view,name='home-view'),
+      
 ]

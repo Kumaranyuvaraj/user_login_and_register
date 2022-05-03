@@ -28,7 +28,6 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 
-# Application definition
 
 INSTALLED_APPS = [
     'user.apps.UserConfig',
@@ -43,7 +42,16 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    
 ]
+
+# pip install twilio
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+LOGIN_URL = '/login'
+
+AUTH_USER_MODEL = 'user.CustomUser'
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -98,12 +106,25 @@ REST_FRAMEWORK = {
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
 
+    'default': {
+
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+
+        'NAME': 'login',
+
+        'USER': 'postgres',
+
+        'PASSWORD': '2022',
+
+        'HOST': 'localhost',
+
+        'PORT': '5432',
+
+    }
+
+}
+   
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
@@ -155,6 +176,6 @@ EMAIL_HOST="smtp.gmail.com"
 EMAIL_PORT=587
 EMAIL_USE_TLS=True
 ####################collage email id ##############
-EMAIL_HOST_USER="tacc2325@gmail.com"
+EMAIL_HOST_USER="kumaranyuvaraj007@gmail.com"
 EMAIL_HOST_PASSWORD="#"
 ##################################################
